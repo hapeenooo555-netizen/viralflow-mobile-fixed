@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViralFlow AI</title>
 
+<style>
+
+body{
+background:#050816;
+font-family:Arial;
+color:white;
+padding:20px;
+margin:0;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+font-size:38px;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+opacity:0.8;
+margin-bottom:30px;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.tab{
+padding:12px 20px;
+border-radius:30px;
+background:#101935;
+border:none;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.tab.active{
+background:#00ff99;
+color:black;
+font-weight:bold;
+}
+
+.card{
+background:#0b1228;
+padding:20px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+textarea{
+width:100%;
+height:160px;
+background:black;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+padding:20px;
+color:white;
+font-size:18px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:18px;
+margin-top:15px;
+border:none;
+border-radius:18px;
+font-size:24px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.generate{
+background:#00ff99;
+color:black;
+}
+
+.variation{
+background:#46bfff;
+color:black;
+}
+
+.copy{
+background:#ff7300;
+color:white;
+}
+
+.export{
+background:#b14cff;
+color:white;
+}
+
+.result{
+margin-top:25px;
+background:#020817;
+padding:20px;
+border-radius:20px;
+white-space:pre-wrap;
+line-height:1.8;
+font-size:20px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.loading{
+display:none;
+margin-top:20px;
+font-size:20px;
+color:#00ff99;
+}
+
+.upgrade{
+margin-top:30px;
+background:#0b1228;
+padding:20px;
+border-radius:20px;
+}
+
+.upgrade button{
+background:#22dd66;
+color:white;
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+opacity:0.6;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🚀 ViralFlow AI</h1>
+
+<div class="subtitle">
+AI ya kutengeneza viral hooks, captions, CTA na hashtags
+</div>
+
+<div class="tabs">
+
+<button class="tab active">TikTok</button>
+<button class="tab">WhatsApp</button>
+<button class="tab">Affiliate</button>
+<button class="tab">Ads</button>
+<button class="tab">YouTube Shorts</button>
+
+</div>
+
+<div class="card">
+
+<textarea id="prompt">
+Nipe tiktok hooks za kuuza bidhaa online
+</textarea>
+
+<button class="generate" onclick="generateAI()">
+🚀 Generate
+</button>
+
+<button class="variation" onclick="showPremiumPopup()">
+🔒 10 Variations
+</button>
+
+<button class="copy" onclick="copyResult()">
+📋 Copy
+</button>
+
+<button class="export" onclick="showPremiumPopup()">
+🔒 Export TXT
+</button>
+
+<div class="loading" id="loading">
+⏳ ViralFlow AI inatengeneza content...
+</div>
+
+<div class="result" id="result">
+
+HOOK:
+🔥 Ukiona watu wanavaa hivi ujue wanaingiza pesa online!
+
+CAPTION:
+Watu wengi wanatafuta njia ya kuuza bidhaa mtandaoni lakini hawajui waanzie wapi 😳
+Mfumo huu unakusaidia kupata wateja kila siku kupitia TikTok 🚀
+
+CTA:
+Comment “NATAKA MFUMO” nikutumie maelezo 💰
+
+HASHTAGS:
+#BiasharaOnline
+#TikTokMarketing
+#AffiliateTZ
+#ViralFlowAI
+
+</div>
+
+</div>
+
+<div class="upgrade">
+
+<h2>📌 History</h2>
+
+<button onclick="goPremium()">
+💬 Upgrade / Order Premium
+</button>
+
+</div>
+
+<div class="footer">
+Powered by Groq + Cloudflare Workers
+</div>
+
+</div>
+
+<script>
+
+function generateAI(){
+
+const prompt =
+document.getElementById("prompt").value;
+
+const loading =
+document.getElementById("loading");
+
+const result =
+document.getElementById("result");
+
+loading.style.display = "block";
+
+setTimeout(()=>{
+
+loading.style.display = "none";
+
+result.innerText =
+
+"HOOK:\n🔥 " + prompt + "\n\n" +
+
+"CAPTION:\nMfumo wa ViralFlow AI unaweza kusaidia kupata views, leads na sales kila siku 🚀\n\n" +
+
+"CTA:\nComment 'NATAKA MFUMO' nikutumie maelezo 💰\n\n" +
+
+"HASHTAGS:\n#ViralFlowAI #TikTokTZ #AffiliateMarketing";
+
+},2000);
+
+}
+
+function copyResult(){
+
+const text =
+document.getElementById("result").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("✅ Content copied");
+
+}
+
+function showPremiumPopup(){
+
+const go =
+confirm(
+
+"🔥 VIRALFLOW AI PREMIUM 🔥\n\n" +
+
+"✅ Unlimited Variations\n" +
+
+"✅ Export TXT\n" +
+
+"✅ Viral Hooks\n" +
+
+"✅ AI Captions\n" +
+
+"✅ Affiliate Scripts\n" +
+
+"✅ WhatsApp Closing\n\n" +
+
+"Bonyeza OK ku-order Premium"
+
+);
+
+if(go){
+
+window.open(
+"https://wa.me/255783535774?text=Nataka%20ViralFlow%20AI%20Premium",
+"_blank"
+);
+
+}
+
+}
+
+function goPremium(){
+
+window.open(
+"https://wa.me/255783535774?text=Nataka%20ViralFlow%20AI%20Premium",
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+  </html>
