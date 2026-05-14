@@ -1,0 +1,23 @@
+{
+  "name": "viralflow-mobile-fixed",
+  "version": "1.0.0",
+  "description": "ViralFlow AI - AI-powered content generation for TikTok, WhatsApp, Affiliate, Ads, and YouTube Shorts",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000",
+    "build": "echo 'Building for production...'",
+    "deploy": "echo 'Ready for deployment'"
+  },
+  "keywords": [
+    "viral",
+    "ai",
+    "content-generation",
+    "tiktok",
+    "marketing"
+  ],
+  "author": "hapeenooo555-netizen",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
